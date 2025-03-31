@@ -1,10 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
+import { PrismaService } from '../prisma-db/prisma.service';
 import { Exame, Prisma } from '@prisma/client';
 
 @Injectable()
-export class ExamesService {
+export class ExamesPrisma {
   constructor(private prisma: PrismaService) {}
+
+  async buscarExamePorNome(
+    where: Prisma.ExameWhereInput,
+  ): Promise<Exame | null> {
+    return this.prisma.exame.findFirst({
+      where,
+    });
+  }
 
   async exame(
     exameWhereUniqueInput: Prisma.ExameWhereUniqueInput,
