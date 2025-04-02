@@ -17,6 +17,8 @@ model Usuario {
   id           Int      @id @default(autoincrement())
   email        String   @unique
   nome         String?
+  telefone     String?
+  avatar       String?
   senha        String
   criadoEm     DateTime @default(now())
   atualizadoEm DateTime @updatedAt
