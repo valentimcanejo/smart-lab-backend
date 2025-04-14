@@ -1,18 +1,20 @@
 -- CreateTable
-CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
+CREATE TABLE "Usuario" (
+    "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "nome" TEXT,
+    "telefone" TEXT,
+    "avatar" TEXT,
     "senha" TEXT NOT NULL,
     "criadoEm" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "atualizadoEm" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Usuario_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Exame" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "nome" TEXT,
     "instrucoes" TEXT,
     "material" TEXT,
@@ -25,7 +27,7 @@ CREATE TABLE "Exame" (
 
 -- CreateTable
 CREATE TABLE "Unidade" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "nome" TEXT,
     "endereco" TEXT,
     "telefone" TEXT,
@@ -40,4 +42,4 @@ CREATE TABLE "Unidade" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+CREATE UNIQUE INDEX "Usuario_email_key" ON "Usuario"("email");

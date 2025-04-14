@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Usuario {
-  id           Int      @id @default(autoincrement())
+  id           String   @id @default(uuid())
   email        String   @unique
   nome         String?
   telefone     String?
@@ -25,7 +25,7 @@ model Usuario {
 }
 
 model Exame {
-  id           Int      @id @default(autoincrement())
+  id           String   @id @default(uuid())
   nome         String?
   instrucoes   String?
   material     String?
@@ -35,7 +35,7 @@ model Exame {
 }
 
 model Unidade {
-  id                 Int      @id @default(autoincrement())
+  id                 String   @id @default(uuid())
   nome               String?
   endereco           String?
   telefone           String?
